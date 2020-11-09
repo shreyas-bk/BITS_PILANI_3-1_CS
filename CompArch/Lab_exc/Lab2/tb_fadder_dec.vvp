@@ -1,0 +1,166 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_008c3df8 .scope module, "tb_fadder_dec" "tb_fadder_dec" 2 2;
+ .timescale 0 0;
+v008cf9f0_0 .var "a", 0 0;
+v008cfc58_0 .var "b", 0 0;
+v008d03e8_0 .var "cin", 0 0;
+v008cfa48_0 .net "cout", 0 0, L_008feab0;  1 drivers
+v008cff18_0 .net "sum", 0 0, L_008fea68;  1 drivers
+S_008c3ec8 .scope module, "addr" "fadder_dec" 2 7, 3 2 0, S_008c3df8;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "sum"
+    .port_info 1 /OUTPUT 1 "cout"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+    .port_info 4 /INPUT 1 "cin"
+L_008feb88 .functor OR 1, L_008cfba8, L_008cfc00, C4<0>, C4<0>;
+L_008fe708 .functor OR 1, L_008feb88, L_008cfcb0, C4<0>, C4<0>;
+L_008fea68 .functor OR 1, L_008fe708, L_008cff70, C4<0>, C4<0>;
+L_008febd0 .functor OR 1, L_008d0128, L_008cfe68, C4<0>, C4<0>;
+L_008fe828 .functor OR 1, L_008febd0, L_008cfec0, C4<0>, C4<0>;
+L_008feab0 .functor OR 1, L_008fe828, L_008cffc8, C4<0>, C4<0>;
+v008c3028_0 .net *"_s1", 0 0, L_008cfba8;  1 drivers
+v008c3448_0 .net *"_s11", 0 0, L_008cff70;  1 drivers
+v008c3130_0 .net *"_s15", 0 0, L_008d0128;  1 drivers
+v008c2e18_0 .net *"_s17", 0 0, L_008cfe68;  1 drivers
+v008d0498_0 .net *"_s18", 0 0, L_008febd0;  1 drivers
+v008d0390_0 .net *"_s21", 0 0, L_008cfec0;  1 drivers
+v008d0338_0 .net *"_s22", 0 0, L_008fe828;  1 drivers
+v008d01d8_0 .net *"_s25", 0 0, L_008cffc8;  1 drivers
+v008cfd08_0 .net *"_s3", 0 0, L_008cfc00;  1 drivers
+v008d0230_0 .net *"_s4", 0 0, L_008feb88;  1 drivers
+v008cfdb8_0 .net *"_s7", 0 0, L_008cfcb0;  1 drivers
+v008d0440_0 .net *"_s8", 0 0, L_008fe708;  1 drivers
+v008d0288_0 .net "a", 0 0, v008cf9f0_0;  1 drivers
+v008cfd60_0 .net "b", 0 0, v008cfc58_0;  1 drivers
+v008cfaf8_0 .net "cin", 0 0, v008d03e8_0;  1 drivers
+v008cfaa0_0 .net "cout", 0 0, L_008feab0;  alias, 1 drivers
+v008d0078_0 .net "dec_out", 7 0, L_008cfb50;  1 drivers
+v008cfe10_0 .net "sum", 0 0, L_008fea68;  alias, 1 drivers
+L_008cfba8 .part L_008cfb50, 1, 1;
+L_008cfc00 .part L_008cfb50, 2, 1;
+L_008cfcb0 .part L_008cfb50, 4, 1;
+L_008cff70 .part L_008cfb50, 7, 1;
+L_008d0128 .part L_008cfb50, 3, 1;
+L_008cfe68 .part L_008cfb50, 5, 1;
+L_008cfec0 .part L_008cfb50, 6, 1;
+L_008cffc8 .part L_008cfb50, 7, 1;
+S_008d3180 .scope module, "dec" "decoder_3to1" 3 12, 4 3 0, S_008c3ec8;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 8 "outp"
+    .port_info 1 /INPUT 1 "a"
+    .port_info 2 /INPUT 1 "b"
+    .port_info 3 /INPUT 1 "c"
+L_0143dc90 .functor NOT 1, v008cf9f0_0, C4<0>, C4<0>, C4<0>;
+L_0143ddb0 .functor NOT 1, v008cfc58_0, C4<0>, C4<0>, C4<0>;
+L_0143dcd8 .functor NOT 1, v008d03e8_0, C4<0>, C4<0>, C4<0>;
+L_0143de40 .functor AND 1, L_0143dc90, L_0143ddb0, L_0143dcd8, C4<1>;
+L_0143de88 .functor AND 1, L_0143dc90, L_0143ddb0, v008d03e8_0, C4<1>;
+L_0143ded0 .functor AND 1, L_0143dc90, v008cfc58_0, L_0143dcd8, C4<1>;
+L_0143e0c8 .functor AND 1, L_0143dc90, v008cfc58_0, v008d03e8_0, C4<1>;
+L_0143df18 .functor AND 1, v008cf9f0_0, L_0143ddb0, L_0143dcd8, C4<1>;
+L_008fea20 .functor AND 1, v008cf9f0_0, L_0143ddb0, v008d03e8_0, C4<1>;
+L_008fe750 .functor AND 1, v008cf9f0_0, v008cfc58_0, L_0143dcd8, C4<1>;
+L_008fe798 .functor AND 1, v008cf9f0_0, v008cfc58_0, v008d03e8_0, C4<1>;
+v008c34a0_0 .net *"_s10", 0 0, L_0143ded0;  1 drivers
+v008c3398_0 .net *"_s13", 0 0, L_0143e0c8;  1 drivers
+v008c2ec8_0 .net *"_s16", 0 0, L_0143df18;  1 drivers
+v008c2e70_0 .net *"_s19", 0 0, L_008fea20;  1 drivers
+v008c31e0_0 .net *"_s22", 0 0, L_008fe750;  1 drivers
+v008c3340_0 .net *"_s25", 0 0, L_008fe798;  1 drivers
+v008c3080_0 .net *"_s4", 0 0, L_0143de40;  1 drivers
+v008c32e8_0 .net *"_s7", 0 0, L_0143de88;  1 drivers
+v008c3238_0 .net "a", 0 0, v008cf9f0_0;  alias, 1 drivers
+v008c34f8_0 .net "abar", 0 0, L_0143dc90;  1 drivers
+v008c30d8_0 .net "b", 0 0, v008cfc58_0;  alias, 1 drivers
+v008c2f78_0 .net "bbar", 0 0, L_0143ddb0;  1 drivers
+v008c3290_0 .net "c", 0 0, v008d03e8_0;  alias, 1 drivers
+v008c2dc0_0 .net "cbar", 0 0, L_0143dcd8;  1 drivers
+v008c2fd0_0 .net "outp", 7 0, L_008cfb50;  alias, 1 drivers
+LS_008cfb50_0_0 .concat8 [ 1 1 1 1], L_0143de40, L_0143de88, L_0143ded0, L_0143e0c8;
+LS_008cfb50_0_4 .concat8 [ 1 1 1 1], L_0143df18, L_008fea20, L_008fe750, L_008fe798;
+L_008cfb50 .concat8 [ 4 4 0 0], LS_008cfb50_0_0, LS_008cfb50_0_4;
+    .scope S_008c3df8;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "tb_fadder_dec.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_008c3df8;
+T_1 ;
+    %vpi_call 2 15 "$monitor", " a = %b, b = %b, cin = %b, sum = %b, cout = %b", v008cf9f0_0, v008cfc58_0, v008d03e8_0, v008cff18_0, v008cfa48_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_008c3df8;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008cf9f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008cfc58_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008d03e8_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008cf9f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008cfc58_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008d03e8_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008cf9f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008cfc58_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008d03e8_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008cf9f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008cfc58_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008d03e8_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008cf9f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008cfc58_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008d03e8_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008cf9f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008cfc58_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008d03e8_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008cf9f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008cfc58_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v008d03e8_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008cf9f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008cfc58_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v008d03e8_0, 0, 1;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "tb_fadder_dec.v";
+    "./fadder_dec.v";
+    "./decoder_3to1.v";
