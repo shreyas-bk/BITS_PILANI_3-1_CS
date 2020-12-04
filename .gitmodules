@@ -4,3 +4,6 @@
 [submodule "NNFL/Assignment2"]
 	path = NNFL/Assignment2
 	url = https://github.com/shreyas-bk/BITSF312_A2-NNFL-Assignment2.git
+[submodule "NNFL/Assignment1"]
+	path = NNFL/Assignment1
+	url = https://github.com/shreyas-bk/BITSF312_A1-NNFL-Assignment1.git
