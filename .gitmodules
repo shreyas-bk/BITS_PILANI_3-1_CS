@@ -1,3 +1,6 @@
 [submodule "NNFL/NNFL_Term_Paper"]
 	path = NNFL/NNFL_Term_Paper
 	url = https://github.com/shreyas-bk/NNFL_Term_Paper.git
+[submodule "NNFL/Assignment2"]
+	path = NNFL/Assignment2
+	url = https://github.com/shreyas-bk/BITSF312_A2-NNFL-Assignment2.git
