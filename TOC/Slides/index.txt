@@ -1,0 +1,22 @@
+L2: construct dfa, definiton dfa
+L4: define nfa, nfa->dfa
+L5: e-NFA->nFA
+L6: Reg Lang
+L7: Reg lang->NFA	
+L8: DFA->GNFA
+L9: Closure of Reg Lang
+L11: Minimization of dfa w state equiv
+L12: '' w table filling
+L13: CFG
+L14: Chomsky hierarchy
+L15: Derivation and Ambiguity
+L16: CFG to CNF
+L17: PDA
+L18: CFG to PDA
+L20: DCFL
+L21: Closures of CFL
+L25: Top down parsing
+L27: Bottom up
+L28: TM
+L30: Recursive
+L31: Multitape
